@@ -146,11 +146,12 @@ section.pricing {
     <h1 class="font-weight-light text-white">Our rooms</h1>
     <div class="row">
       <!-- Free Tier -->
+      <% @rooms.each do |el| %>
       <div class="col-lg-4">
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">For one persom</h5>
-            <h6 class="card-price text-center">$50<span class="period">/day</span></h6>
+            <h5 class="card-title text-muted text-uppercase text-center"><%= el[:title] %></h5>
+            <h6 class="card-price text-center">$<%= el[:price] %><span class="period">/day</span></h6>
             <hr>
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
@@ -166,48 +167,8 @@ section.pricing {
           </div>
         </div>
       </div>
-      <!-- Plus Tier -->
-      <div class="col-lg-4">
-        <div class="card mb-5 mb-lg-0">
-          <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">For two peeson</h5>
-            <h6 class="card-price text-center">$90<span class="period">/day</span></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Some text</strong></li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Some text</li>
-            </ul>
-            <a href="/rooms/2" class="btn btn-block btn-primary text-uppercase">More</a>
-          </div>
-        </div>
-      </div>
-      <!-- Pro Tier -->
-      <div class="col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">For three</h5>
-            <h6 class="card-price text-center">$135<span class="period">/day</span></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Some text</strong></li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited</strong> Some text</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Some text</li>
-            </ul>
-            <a href="/rooms/3" class="btn btn-block btn-primary text-uppercase">More</a>
-          </div>
-        </div>
-      </div>
+      <% end %>
+
     </div>
   </div>
 </section>
